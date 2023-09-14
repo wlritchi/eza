@@ -56,6 +56,7 @@ impl ShowIcons {
                 _ => return Err(OptionsError::BadArgument(&flags::COLOR, word.into())),
             },
             None => AlwaysOrAuto::Automatic,
+            _ => return Err(OptionsError::BadArgument(&flags::ICONS, word.into())),
         };
 
         let width = if let Some(columns) = vars
@@ -77,7 +78,7 @@ impl ShowIcons {
         };
 
         match mode {
-            AlwaysOrAuto::Always => Ok(Self::Always(width)),
+            AlwaysOrAuto::Always => Ok(Self::Automatic(width)),
             AlwaysOrAuto::Automatic => Ok(Self::Automatic(width)),
         }
     }
