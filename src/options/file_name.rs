@@ -51,7 +51,7 @@ impl ShowIcons {
         let mode = match mode_opt {
             Some(word) => match word.to_str() {
                 Some("always") => AlwaysOrAuto::Always,
-                Some("auto") | Some("automatic") => AlwaysOrAuto::Automatic,
+                Some("auto" | "automatic") => AlwaysOrAuto::Automatic,
                 Some("never") => return Ok(Self::Never),
                 _ => return Err(OptionsError::BadArgument(&flags::COLOR, word.into())),
             },
