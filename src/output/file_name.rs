@@ -169,10 +169,7 @@ impl<'a, 'dir, C: Colours> FileName<'a, 'dir, C> {
         let mut bits = Vec::new();
 
         let spaces_count_opt = match self.options.show_icons {
-<<<<<<< HEAD
             ShowIcons::Always(spaces_count) => Some(spaces_count),
-=======
->>>>>>> 5180cc11 (fix: cleanup and fix output stale PR)
             ShowIcons::Automatic(spaces_count) if self.options.is_a_tty => Some(spaces_count),
             _ => None,
         };
@@ -222,10 +219,6 @@ impl<'a, 'dir, C: Colours> FileName<'a, 'dir, C> {
                     if !target.name.is_empty() {
                         let target_options = Options {
                             classify: Classify::JustFilenames,
-<<<<<<< HEAD
-=======
-                            is_a_tty: self.options.is_a_tty,
->>>>>>> 5180cc11 (fix: cleanup and fix output stale PR)
                             show_icons: ShowIcons::Never,
                             embed_hyperlinks: EmbedHyperlinks::Off,
                             is_a_tty: self.options.is_a_tty,
