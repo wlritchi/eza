@@ -77,7 +77,7 @@ impl ShowIcons {
         };
 
         match mode {
-            AlwaysOrAuto::Always => Ok(Self::Automatic(width)),
+            AlwaysOrAuto::Always => Ok(Self::Always(width)),
             AlwaysOrAuto::Automatic => Ok(Self::Automatic(width)),
         }
     }
